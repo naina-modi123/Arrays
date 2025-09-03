@@ -1,0 +1,22 @@
+class Solution {
+	List<Integer> getEvenDigitNumbers (int[] arr) {
+		// add your logic here
+		List <Integer> result = new ArrayList<>();
+		for(int num : arr){
+			int digitcount = CountDigits(num);
+			if(digitcount % 2 == 0){
+				result.add(num);
+			}
+		}
+		return result;	
+	}
+	int CountDigits(int num){
+		if(num == 0) return 1;
+		int count = 0;
+		while(num > 0){
+			num = num / 10;
+			count++;
+		}
+		return count;
+	}
+}
